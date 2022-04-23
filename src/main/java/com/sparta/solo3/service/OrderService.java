@@ -40,8 +40,9 @@ public class OrderService {
             FoodOrderRequestDto foodOrderRequestDto = requestDto.getFoods().get(i);
             quantity = foodOrderRequestDto.getQuantity();
             price = foodRepository.findByIdAndRestaurantsId(foodOrderRequestDto.getId(), restaurantId).getPrice();
-            if(quantity < 1 || quantity >100) throw new IllegalArgumentException("주문 수량 범위를 확인하세요.");
+            if(quantity < 1 || quantity >100) throw new IllegalArgumentException("주문 수량123 범위를 확인하세요.");
             String foodName = foodRepository.findByIdAndRestaurantsId(foodOrderRequestDto.getId(), restaurantId).getName();
+
             FoodOrderDto foodOrderDto = new FoodOrderDto();
             foodOrderDto.setName(foodName);
             foodOrderDto.setQuantity(quantity);
